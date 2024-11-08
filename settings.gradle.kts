@@ -1,4 +1,6 @@
 pluginManagement {
+    includeBuild("build-logic")
+
     repositories {
         google {
             content {
@@ -18,6 +20,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+gradle.startParameter.excludedTaskNames.add(":build-logic:convention:testClasses")
 
 rootProject.name = "Levelist"
 include(":app")
