@@ -10,7 +10,7 @@
         android:theme="@style/Theme.Levelist"
         tools:targetApi="35">
         <activity
-            android:name="com.example.levelist.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Levelist">
             <intent-filter>

@@ -24,5 +24,10 @@ dependencyResolutionManagement {
 gradle.startParameter.excludedTaskNames.add(":build-logic:convention:testClasses")
 
 rootProject.name = "Levelist"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
- 
+include(":core:ui")
+include(":core:domain")
+include(":core:database")
+include(":core:data")
