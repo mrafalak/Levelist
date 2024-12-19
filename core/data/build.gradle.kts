@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mr.levelist.data"
+    namespace = "com.mr.levelist.core.data"
 }
 
 dependencies {

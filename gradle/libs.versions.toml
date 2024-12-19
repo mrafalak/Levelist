@@ -7,10 +7,16 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
-composeBom = "2024.10.01"
+navCompose = "2.8.4"
+composeBom = "2024.11.00"
 koin = "4.0.0"
 ksp = "2.0.21-1.0.27"
 timber = "5.0.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+serialization = "1.7.3"
+appcompatVersion = "1.7.0"
+materialVersion = "1.12.0"
 
 
 [libraries]
@@ -22,6 +28,7 @@ ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devt
 
 #Kotlin
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
 
 #UI
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -33,9 +40,15 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+#Navigation
+androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navCompose" }
+
 #Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core" }
+koin-android = { group = "io.insert-koin", name = "koin-android" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
+koin-compose-navigation = { group = "io.insert-koin", name = "koin-androidx-compose-navigation" }
 
 #Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -46,12 +59,16 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 
 #Log
 timber-core = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # Convention plugins
@@ -61,4 +78,7 @@ levelist-android-library = { id = "levelist.android.library", version = "unspeci
 levelist-android-lib-compose = { id = "levelist.android.lib.compose", version = "unspecified" }
 
 [bundles]
-ui-all = ["androidx-lifecycle-runtime-ktx", "androidx-activity-compose", "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling", "androidx-ui-tooling-preview", "androidx-material3"]
+ui-all = ["androidx-lifecycle-runtime-ktx", "androidx-activity-compose", "androidx-ui",
+    "androidx-ui-graphics", "androidx-ui-tooling", "androidx-ui-tooling-preview", "androidx-material3",
+    "androidx-navigation"
+]

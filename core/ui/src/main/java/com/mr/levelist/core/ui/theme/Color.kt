@@ -1,4 +1,4 @@
-package com.mr.ui.theme
+package com.mr.levelist.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

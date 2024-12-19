@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace = "com.mr.levelist.domain"
+    namespace = "com.mr.levelist.core.domain"
 }

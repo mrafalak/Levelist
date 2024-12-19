@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_habits">Habits</string>
+    <string name="title_new_habit">New Habit</string>
+    <string name="ic_add_new_habit">New habit</string>
+    <string name="ic_add_new_habit_description">Create new habit</string>
+</resources>

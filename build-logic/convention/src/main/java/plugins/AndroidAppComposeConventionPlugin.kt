@@ -19,6 +19,8 @@ class AndroidAppComposeConventionPlugin : Plugin<Project> {
             dependencies {
                 "implementation"(platform(versionCatalog().findLibrary("compose-bom").get()))
                 "implementation"(versionCatalog().findBundle("ui-all").get())
+                "implementation"(versionCatalog().findLibrary("koin-compose").get())
+                "implementation"(versionCatalog().findLibrary("koin-compose-navigation").get())
             }
 
             val extension = extensions.getByType<ApplicationExtension>()

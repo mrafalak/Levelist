@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mr.levelist.ui"
+    namespace = "com.mr.levelist.core.ui"
 }
 
 dependencies {

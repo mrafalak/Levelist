@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace = "com.mr.levelist.database"
+    namespace = "com.mr.levelist.core.database"
 }

@@ -18,13 +18,16 @@ class AndroidLibConventionPlugin : Plugin<Project> {
                 apply("com.android.library")
                 apply("org.jetbrains.kotlin.android")
                 apply("com.google.devtools.ksp")
+                apply("org.jetbrains.kotlin.plugin.serialization")
             }
 
             dependencies {
                 "implementation"(platform(versionCatalog().findLibrary("koin-bom").get()))
                 "implementation"(versionCatalog().findLibrary("koin-core").get())
+                "implementation"(versionCatalog().findLibrary("koin-android").get())
                 "implementation"(versionCatalog().findLibrary("androidx-core-ktx").get())
                 "implementation"(versionCatalog().findLibrary("timber-core").get())
+                "implementation"(versionCatalog().findLibrary("kotlinx-serialization").get())
             }
 
             extensions.configure<LibraryExtension> {
