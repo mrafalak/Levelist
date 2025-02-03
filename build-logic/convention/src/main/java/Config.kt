@@ -24,6 +24,14 @@ object Config {
         kotlinJvm = JvmTarget.JVM_17,
         freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
     )
+    val buildConfigFlags = mapOf(
+        "REMOTE_CONFIG_ENABLED" to mapOf(
+            BuildTypeEnum.RELEASE to "true",
+            BuildTypeEnum.DEBUG to "false"
+        ),
+    )
+    const val DEFAULT_PROGUARD_FILE = "proguard-android-optimize.txt"
+    const val PROGUARD_RULES_FILE = "proguard-rules.pro"
     const val KOTLIN_COMPILER_EXT_VERSION = "1.5.15"
 }
 

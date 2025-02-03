@@ -17,6 +17,9 @@ material = "1.12.0"
 serialization = "1.7.3"
 appcompatVersion = "1.7.0"
 materialVersion = "1.12.0"
+firebase = "33.7.0"
+googleServices = "4.4.2"
+dataStore = "1.1.2"
 
 
 [libraries]
@@ -62,6 +65,13 @@ timber-core = { group = "com.jakewharton.timber", name = "timber", version.ref =
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
 material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 
+#Firebase
+google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
+google-firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+google-firebase-config = { module = "com.google.firebase:firebase-config" }
+
+#DataStore
+data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -70,6 +80,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 
 # Convention plugins
 levelist-android-application = { id = "levelist.android.application", version = "unspecified" }

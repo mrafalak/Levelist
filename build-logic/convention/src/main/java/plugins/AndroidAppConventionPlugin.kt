@@ -20,6 +20,8 @@ class AndroidAppConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
                 apply("com.google.devtools.ksp")
                 apply("org.jetbrains.kotlin.plugin.serialization")
+                apply("org.jetbrains.kotlin.plugin.serialization")
+                apply("com.google.gms.google-services")
             }
 
             dependencies {
@@ -29,6 +31,13 @@ class AndroidAppConventionPlugin : Plugin<Project> {
                 "implementation"(versionCatalog().findLibrary("androidx-core-ktx").get())
                 "implementation"(versionCatalog().findLibrary("timber-core").get())
                 "implementation"(versionCatalog().findLibrary("kotlinx-serialization").get())
+                "implementation"(
+                    platform(
+                        versionCatalog().findLibrary("google-firebase-bom").get()
+                    )
+                )
+                "implementation"(versionCatalog().findLibrary("google-firebase-analytics").get())
+                "implementation"(versionCatalog().findLibrary("google-firebase-config").get())
             }
 
             extensions.configure<ApplicationExtension> {

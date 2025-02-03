@@ -13,11 +13,14 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.mr.levelist.MainViewModel
 import com.mr.levelist.core.ui.navigation.model.BottomBarState
 import com.mr.levelist.core.ui.navigation.model.BottomBarItemConfig
 import com.mr.levelist.core.ui.navigation.model.ScreenConfig
@@ -36,11 +39,14 @@ import org.koin.androidx.compose.koinViewModel
 fun HomeNavHost(
     rootNavController: NavHostController,
     nestedNavController: NavHostController,
+    mainViewModel: MainViewModel = koinViewModel(),
     navigationViewModel: NavigationViewModel = koinViewModel()
 ) {
+    val scope = rememberCoroutineScope()
     val screenState = navigationViewModel.homeScreenConfig.collectAsState()
     val drawerState = rememberDrawerState(DrawerValue.Closed)
-    val scope = rememberCoroutineScope()
+
+    val featureFlags by mainViewModel.featureFlags.collectAsStateWithLifecycle()
 
     val updateScreenConfig: (ScreenConfig) -> Unit = { screenConfig ->
         navigationViewModel.updateScreenConfig(screenConfig)
@@ -69,14 +75,14 @@ fun HomeNavHost(
         BottomBarItemConfig(
             selectedIcon = Icons.Filled.Home,
             unselectedIcon = Icons.Outlined.Home,
-            description = "HabitT",
+            description = "Habit",
             route = HabitRoute.HabitList.route,
             onClick = onClickBottomBarItem
         ),
         BottomBarItemConfig(
             selectedIcon = Icons.Filled.Info,
             unselectedIcon = Icons.Outlined.Info,
-            description = "GoalT",
+            description = "Goal",
             route = GoalRoute.Goals.route,
             onClick = onClickBottomBarItem
         ),

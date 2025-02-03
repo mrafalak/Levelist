@@ -6,6 +6,7 @@ import com.mr.levelist.core.ui.navigation.model.HomeScreenConfig
 import com.mr.levelist.core.ui.navigation.model.ScreenConfig
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+
 class NavigationViewModel : ViewModel() {
 
     private val _homeScreenConfig = MutableStateFlow(HomeScreenConfig())
